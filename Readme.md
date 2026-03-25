@@ -2,7 +2,7 @@
 
 A full-stack newsletter management system featuring a Flask backend and a React frontend. This application allows users to subscribe to updates and provides administrators with a dashboard to create and send email campaigns.
 
-## 🚀 Features
+## Features
 
 ### For Users
 - **Easy Subscription:** A clean, simple form to join the newsletter using your name and email.
@@ -16,7 +16,7 @@ A full-stack newsletter management system featuring a Flask backend and a React 
 - **Automated Delivery:** Automatically trigger bulk email delivery to all active subscribers as soon as a campaign is created.
 - **Manual Control:** Flexibility to manually resend campaigns or delete outdated ones.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Backend
 - **Framework:** [Flask](https://flask.palletsprojects.com/) (Python)
@@ -39,7 +39,7 @@ A full-stack newsletter management system featuring a Flask backend and a React 
 - **Frontend UI/UX:** Built a responsive, modern frontend from scratch, including Home, Admin Dashboard, and Campaign Detail pages.
 - **Process Automation:** Integrated automated triggers for "Welcome" emails and bulk campaign distributions upon publication.
 
-## ⚙️ Setup Instructions
+## Setup Instructions
 
 ### Backend Setup
 1.  **Navigate:** `cd newsletter-backend`
@@ -55,4 +55,30 @@ A full-stack newsletter management system featuring a Flask backend and a React 
 2.  **Install:** `npm install`
 3.  **Run:** `npm run dev`
 
----
+## Walkthrough
+
+### Architecture & Structure
+The application follows a standard **Client-Server Architecture**:
+- **Frontend:** React application built with Vite, handling the UI and user interactions.
+- **Backend:** Flask (Python) REST API overseeing business logic, database management, and email services.
+- **Communication:** Standard JSON over HTTP.
+
+**Structure Overview:**
+- `/newsletter-backend`: Contains the Flask application, models, routes, and services.
+- `/newsletter-frontend`: React source code, components, and pages.
+
+### Technical Decisions
+- **SQLAlchemy (ORM):** Used to abstract database operations, allowing for easy transitions between database types and providing a robust layer for model definitions.
+- **SMTP for Email:** Chosen for direct and standard email delivery.
+- **Vite for React:** Selected for its superior build speed and modern development experience compared to traditional tools.
+- **Modular Backend:** Separated routes, models, and services (e.g., `campaign_service.py`) to ensure the codebase remains maintainable and testable.
+
+### AI Usage
+Artificial Intelligence was utilized throughout the development process for:
+- **Refactoring & Debugging:** Specifically in resolving complex circular dependency issues and 405 API errors.
+- **Boilerplate Generation:** Creating the initial structure for models and REST endpoints.
+- **Documentation:** Drafting comprehensive README and implementation plans.
+
+### Potential Risks
+- **Email Delivery Limits:** Standard SMTP servers often have strict hourly/daily sending limits.
+- **Synchronous Bottlenecks:** Large campaign sends are currently handled synchronously, which could lead to API timeouts for very large subscriber lists.
