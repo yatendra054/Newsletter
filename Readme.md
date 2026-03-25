@@ -33,7 +33,6 @@ A full-stack newsletter management system featuring a Flask backend and a React 
 
 ## ✅ What I Have Done
 
-- **Critical Bug Fixes:** Resolved "405 Method Not Allowed" API errors and fixed circular dependency issues in the backend structure.
 - **Robust Database Architecture:** Designed and implemented the `Subscriber` and `Campaign` models with optimized queries.
 - **Email Service Engineering:** Developed a dedicated `campaign_service.py` and `email_service.py` to handle bulk SMTP delivery efficiently.
 - **RESTful API Development:** Built a complete set of endpoints for subscriber management and campaign CRUD operations.
